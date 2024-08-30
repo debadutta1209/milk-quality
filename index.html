@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Safety Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        .data-section, .plot-section {
+            margin-top: 30px;
+        }
+        .data-section p {
+            font-size: 18px;
+        }
+        .plot {
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Milk Safety Dashboard</h1>
+        <div class="data-section">
+            <h2>Summary Data</h2>
+            <p>Safe Count: {{ safe_count }}</p>
+            <p>Unsafe Count: {{ unsafe_count }}</p>
+            <p>Average Temperature: {{ avg_temp }} °C</p>
+            <p>Average Gas Concentration: {{ avg_gas }}</p>
+        </div>
+        <div class="plot-section">
+            <h2>Safety Analysis Plot</h2>
+            <div class="plot">
+                <img src="data:image/png;base64,{{ plot_url }}" alt="Safety Analysis Plot">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
