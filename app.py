@@ -59,6 +59,18 @@ def index():
     # Generate plot
     img = io.BytesIO()
     plt.figure(figsize=(14, 10))
+    # Generate plot
+img = io.BytesIO()
+plt.figure(figsize=(14, 10))
+
+# (Your existing plotting code here...)
+
+plt.tight_layout()
+plt.savefig(img, format='png')
+img.seek(0)
+plot_url = base64.b64encode(img.getvalue()).decode()
+plot_url = 'data:image/png;base64,' + plot_url  # Add this line to ensure the base64 string is correctly formatted.
+
 
     plt.subplot(3, 1, 1)
     plt.plot(df['field1'], label='Temperature (°C)', color='blue', marker='o')
